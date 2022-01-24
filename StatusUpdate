@@ -24,7 +24,7 @@ public class Mastermind {
 			for (int x=0; x<4; x++) {
 				int num = (int)(Math.random()*6);
 				secret[x] = colors[num];
-			}
+					}
 				
 				
 				
