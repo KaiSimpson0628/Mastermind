@@ -32,13 +32,30 @@ public class Mastermind {
 				
 			
 		} //close Populate
+		/*public void userInterface() {
+			Scanner scan = new Scanner(System.in);
+			System.out.print("Pick a color by its first letter your options are Red, Orange, Green, Blue, Yellow and Purple\n No repeats");
+			System.out.print("Your first guess is: ");
+			String guess1 = scan.nextLine();
+		}*/
 		
 		public void buildBoard() {
+			Scanner scan = new Scanner(System.in);
+			System.out.print("Pick a color by its first letter your options are Red, Orange, Green, Blue, Yellow and Purple\nNo repeats");
+			System.out.print("\nYour first guess is: ");
+			String guess1 = scan.nextLine();
+			System.out.print("\nYour second guess is: ");
+			String guess2 = scan.nextLine();
+			System.out.print("\nYour third guess is: ");
+			String guess3 = scan.nextLine();
+			System.out.print("\nYour fourth guess is: ");
+			String guess4 = scan.nextLine();
+			System.out.print("Guesses  \t Scores\n");
 	board.add(new ArrayList<String>());
-	board.get(0).add("_");
-	board.get(0).add("_");
-	board.get(0).add("_");
-	board.get(0).add("_");
+	board.get(0).add(guess1);
+	board.get(0).add(guess2);
+	board.get(0).add(guess3);
+	board.get(0).add(guess4);
 	board.add(new ArrayList<String>());
 	board.get(1).add("_");
 	board.get(1).add("_");
@@ -67,7 +84,7 @@ public class Mastermind {
 			//next++;
 			}
 	//System.out.println(board);
-}
+} 
 }
 	public void printBoard() {
 		System.out.print("Guesses  \t Scores\n");
