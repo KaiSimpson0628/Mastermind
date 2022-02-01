@@ -8,7 +8,7 @@ import java.util.Arrays;
 //how many turns or trys?
 public class Mastermind {
 	
-	
+	char[] secret;
 	//int[][] arr = new int[10][8]; //4 secret pins, 4 score locations
 	//ArrayList<String> test = new ArrayList<String>();
 	ArrayList<ArrayList<String>> board = new ArrayList<ArrayList<String>>();
@@ -19,11 +19,12 @@ public class Mastermind {
 		{"R", "G", "B", "Y", "b", "w", "o", "o"}}
 		*/ 
 		public void populateBoard() {
-				char[] secret = new char[4];
+				secret = new char[4];
 			char[] colors = {'R', 'O', 'G', 'B', 'Y', 'P'};
 			for (int x=0; x<4; x++) {
 				int num = (int)(Math.random()*6);
 				secret[x] = colors[num]; 
+				System.out.println(secret[x]);
 									}
 				
 				
@@ -40,6 +41,8 @@ public class Mastermind {
 		}*/
 		
 		public void buildBoard() {
+			int rp = 0;
+			int wp =0;
 			Scanner scan = new Scanner(System.in);
 			System.out.print("Pick a color by its first letter your options are Red, Orange, Green, Blue, Yellow and Purple\nNo repeats");
 			System.out.print("\nYour first guess is: ");
@@ -56,11 +59,23 @@ public class Mastermind {
 	board.get(0).add(guess2);
 	board.get(0).add(guess3);
 	board.get(0).add(guess4);
+	for (int y=0; y<4; y++) {
+		for (int z=0; z<4; z++) {
+		if (board.get(0).get(y).equals(String.valueOf(secret[z]))) {
+			if (y==z) {
+				rp = rp + 1;
+			}
+			else {
+			wp = wp + 1;
+			}
+		} //close if 	
+	} //close for loop
+	} //close for loop
 	board.add(new ArrayList<String>());
-	board.get(1).add("_");
-	board.get(1).add("_");
-	board.get(1).add("_");
-	board.get(1).add("_");
+	board.get(1).add("RP");
+	board.get(1).add(String.valueOf(rp));
+	board.get(1).add("WP");
+	board.get(1).add(String.valueOf(wp));
 	board.add(new ArrayList<String>());
 	board.get(2).add("_");
 	board.get(2).add("_");
@@ -86,9 +101,8 @@ public class Mastermind {
 	//System.out.println(board);
 } 
 }
-	public void printBoard() {
-		System.out.print("Guesses  \t Scores\n");
+	//public void printBoard() {
+		//System.out.print("Guesses  \t Scores\n");
 	
-							}
+							//}
 }
-
