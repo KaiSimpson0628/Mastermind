@@ -20,18 +20,16 @@ public class Mastermind {
 		*/ 
 		public void populateBoard() {
 				secret = new char[4];
+				int num = 0;
 			char[] colors = {'R', 'O', 'G', 'B', 'Y', 'P'};
 			for (int x=0; x<4; x++) {
-				int num = (int)(Math.random()*6);
+				int temp = (int)(Math.random()*1000);
+				num = (int)(Math.random()*6);
 				secret[x] = colors[num]; 
 				System.out.println(secret[x]);
-									}
+			}
 				
-				
-				
-				
-				
-			
+					
 		} //close Populate
 		/*public void userInterface() {
 			Scanner scan = new Scanner(System.in);
@@ -106,3 +104,4 @@ public class Mastermind {
 	
 							//}
 }
+
