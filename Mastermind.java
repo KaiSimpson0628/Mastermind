@@ -23,7 +23,7 @@ public class Mastermind {
 				int num = 0;
 			char[] colors = {'R', 'O', 'G', 'B', 'Y', 'P'};
 			for (int x=0; x<4; x++) {
-				int temp = (int)(Math.random()*1000);
+				int temp = (int)(Math.random()*1000); //To avoid getting similar number or repeats gen a random number between 1 - 1000
 				num = (int)(Math.random()*6);
 				secret[x] = colors[num]; 
 				System.out.println(secret[x]);
